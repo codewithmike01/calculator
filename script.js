@@ -26,24 +26,6 @@ const decimal = document.querySelector('#decimal');
 
 
 
-// one.addEventListener('click', () => console.log('1'));
-// two.addEventListener('click', () => console.log('2'));
-// three.addEventListener('click', () => console.log('3'));
-// four.addEventListener('click', () => console.log('4'));
-// five.addEventListener('click', () => console.log('5'));
-// six.addEventListener('click', () => console.log('6'));
-// seven.addEventListener('click', () => console.log('7'));
-// eight.addEventListener('click', () => console.log('8'));
-// nine.addEventListener('click', () => console.log('9'));
-// zero.addEventListener('click', () => console.log('0'));
-// addition.addEventListener('click', () => console.log('+'));
-// subtraction.addEventListener('click', () => console.log('-'));
-// division.addEventListener('click', () => console.log('/'));
-// multiplication.addEventListener('click', () => console.log('*'));
-// del.addEventListener('click', () => console.log('delete'));
-// clear.addEventListener('click', () => console.log('clear'));
-// equalTo.addEventListener('click', () => console.log('='))
-// dec.addEventListener('click', () => console.log('decimal'))
 
 
 function main() {
@@ -111,9 +93,6 @@ function main() {
         if (clickDecimal === true && operator === '') {
             displayInput.append();
             displayErr.textContent = 'you can not have a decimal followed by another'
-        } else if (clickDecimal === false) {
-            displayInput.append();
-            displayErr.textContent = 'you cannot have a decimal as the begining of a calculation'
         } else {
             numHold.push('.');
             displayInput.append('.');
@@ -152,6 +131,7 @@ function main() {
             bHold = [];
         }
         displayInput.append(' + ');
+        clickDecimal = false;
         operator = '+'
     });
     // Multiplication Event
@@ -181,6 +161,7 @@ function main() {
             bHold = [];
         }
         displayInput.append(' * ');
+        clickDecimal = false;
         operator = '*'
     });
 
@@ -208,6 +189,7 @@ function main() {
             bHold = [];
         }
         displayInput.append(' - ');
+        clickDecimal = false;
         operator = '-'
     });
 
@@ -235,6 +217,7 @@ function main() {
             bHold = [];
         }
         displayInput.append(' / ');
+        clickDecimal = false;
         operator = '/'
     });
 
@@ -250,13 +233,13 @@ function main() {
         bHold = [];
         displayOutput.textContent = batchA;
 
-        if (equalCount === 2) {
-            keyPressSign.addEventListener('click', () => {
-                displayErr.textContent = 'You have gotten your answer Why click it twice'
-                equalCount = 0;
+        // if (equalCount === 2) {
+        //     keyPressSign.addEventListener('click', () => {
+        //         displayErr.textContent = 'You have gotten your answer Why click it twice'
+        //         equalCount = 0;
 
-            })
-        }
+        //     })
+        // }
 
 
     });
