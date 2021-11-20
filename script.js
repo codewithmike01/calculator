@@ -260,15 +260,12 @@ function main() {
 
 // functions operations
 function operation(a, b, operator) {
-    console.log('in operate');
     let value = 0;
-
     if (operator === '/' && b === 0) {
 
         displayErr.textContent = 'Do not divide a number by 0';
         return 'Bad input'
     }
-
 
     switch (operator) {
         case '+':
@@ -296,7 +293,6 @@ function add(a, b) {
 }
 
 function sub(a, b) {
-    console.log('in subtraction');
     a = (a - b).toFixed(2);
     displayOutput.textContent = a;
     return a;
